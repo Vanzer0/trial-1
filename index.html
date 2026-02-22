@@ -1,69 +1,162 @@
-<a href="#order" class="btn">Order Now</a>
-            </nav>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drip and Bites TikTok Ad</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .container {
+            width: 360px; /* TikTok vertical aspect ratio (9:16) */
+            height: 640px;
+            position: relative;
+            background-color: #f8f1e8; /* Light cookie-themed background */
+            overflow: hidden;
+            border: 1px solid #ccc; /* For visibility, remove if not needed */
+        }
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, #d2a679, #8b5a2b);
+            opacity: 0.8;
+            animation: bgPulse 5s infinite alternate;
+        }
+        @keyframes bgPulse {
+            0% { opacity: 0.8; }
+            100% { opacity: 1; }
+        }
+        .cookie-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            opacity: 0;
+            animation: fadeInBounce 2s forwards 1s;
+        }
+        @keyframes fadeInBounce {
+            0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+            60% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+            100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+        }
+        .cookie-box img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        .title {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Arial', sans-serif;
+            font-size: 32px;
+            color: #fff;
+            text-shadow: 2px 2px 4px #000;
+            opacity: 0;
+            animation: slideIn 1.5s forwards;
+        }
+        @keyframes slideIn {
+            0% { opacity: 0; transform: translate(-50%, -50px); }
+            100% { opacity: 1; transform: translate(-50%, 0); }
+        }
+        .subtitle {
+            position: absolute;
+            bottom: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Arial', sans-serif;
+            font-size: 24px;
+            color: #ffd700;
+            text-shadow: 1px 1px 2px #000;
+            opacity: 0;
+            animation: fadeIn 2s forwards 2s;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        .call-to-action {
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Arial', sans-serif;
+            font-size: 20px;
+            color: #fff;
+            background-color: #ff4500;
+            padding: 10px 20px;
+            border-radius: 20px;
+            opacity: 0;
+            animation: popIn 1s forwards 3s;
+            cursor: pointer;
+        }
+        @keyframes popIn {
+            0% { opacity: 0; transform: translateX(-50%) scale(0); }
+            100% { opacity: 1; transform: translateX(-50%) scale(1); }
+        }
+        .drip-effect {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        .drip {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #8b4513; /* Chocolate drip color */
+            border-radius: 50%;
+            animation: dripFall 3s infinite;
+        }
+        .drip:nth-child(1) { left: 20%; animation-delay: 0s; }
+        .
+drip:nth-child(2) { left: 40%; animation-delay: 0.5s; }
+        .drip:nth-child(3) { left: 60%; animation-delay: 1s; }
+        .drip:nth-child(4) { left: 80%; animation-delay: 1.5s; }
+        @keyframes dripFall {
+            0% { top: -20px; opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="background"></div>
+        <div class="title">Discover Drip and Bites!</div>
+        <div class="cookie-box">
+            <!-- Replace with your image path when hosting -->
+            <img src="image.jpeg" alt="Drip and Bites Cookies">
         </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h2>Indulge in Chunky, Gooey Perfection</h2>
-            <p>Discover our signature cookies with crispy edges and melty centers. Flavors include Regular Chocolate, Dark Chocolate, White Chocolate, Combination, Mint, and more.</p>
-            <img src="product-box.jpg" alt="Drip and Bites Cookie Box" width="600" height="400"> <!-- Replace src with your image path/URL, e.g., https://your-image-host.com/product-box.jpg or ./product-box.jpg if in same folder -->
-            <p class="text-gray-600 mt-4">Heat in microwave for 10-15 seconds for fresh-baked vibes.</p>
+        <div class="subtitle">Irresistibly Chewy & Chocolatey Goodness</div>
+        <div class="call-to-action">Order Now! 🍪</div>
+        <div class="drip-effect">
+            <div class="drip"></div>
+            <div class="drip"></div>
+            <div class="drip"></div>
+            <div class="drip"></div>
         </div>
-    </section>
-
-    <!-- Products Section -->
-    <section id="products" class="products">
-        <div class="container">
-            <h3>Our Flavors</h3>
-            <div class="grid">
-                <div class="card">
-                    <h4>Regular Chocolate</h4>
-                    <p>Crispy edges, chewy center, loaded with chocolate goodness.</p>
-                </div>
-                <div class="card">
-                    <h4>Dark Chocolate</h4>
-                    <p>Rich, bold, and gooey with a melty bite.</p>
-                </div>
-                <div class="card">
-                    <h4>Black Velvet</h4>
-                    <p>Sweet and tangy fusion in a creamy cookie.</p>
-                </div>
-                <!-- Add more flavors as needed -->
-            </div>
-        </div>
-    </section>
-
-    <!-- TikTok Section for Advertising -->
-    <section id="tiktok" class="tiktok">
-        <div class="container">
-            <h3>See Us on TikTok</h3>
-            <p class="text-center mb-8">Follow @dripandbites_ for cookie tips, recipes, and promos! Share these videos to spread the word.</p>
-            <div class="grid">
-                <!-- Embedded TikTok Videos (replace video IDs with actual ones from @dripandbites_) -->
-                <iframe src="https://www.tiktok.com/embed/7608212980508986632" allowfullscreen title="TikTok Video 1"></iframe>
-                <iframe src="https://www.tiktok.com/embed/7596695468357193016" allowfullscreen title="TikTok Video 2"></iframe>
-            </div>
-            <div class="text-center mt-8">
-                <a href="https://www.tiktok.com/@dripandbites_" target="_blank" rel="noopener noreferrer" class="btn bg-blue-600 text-white hover:bg-blue-700">Follow on TikTok</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Order Section -->
-    <section id="order" class="order">
-        <div class="container">
-            <h3>Ready to Bite?</h3>
-            <p>Order via Facebook, Instagram, or TikTok Shop.</p>
-            <a href="https://www.facebook.com/dripandbites" target="_blank" rel="noopener noreferrer" class="btn">Shop Now</a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Drip and Bites Ad App. All rights reserved.</p>
-    </footer>
+    </div>
+    <script>
+        // Optional JS for more interactivity if needed
+        document.querySelector('.call-to-action').addEventListener('click', () => {
+            alert('Head to dripandbites.com to order!'); // Replace with actual link
+        });
+    </script>
 </body>
 </html>
-```​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
