@@ -1,108 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drip and Bites TikTok Ad - Lively Version</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
-
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
-        }
-        .container {
-            width: 360px; /* TikTok vertical aspect ratio (9:16) */
-            height: 640px;
-            position: relative;
-            background-color: #f8f1e8; /* Light cookie-themed background */
-            overflow: hidden;
-            border: 1px solid #ccc; /* For visibility, remove if not needed */
-        }
-        .background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #d2a679, #8b5a2b, #ff4500, #ffd700);
-            opacity: 0.8;
-            animation: bgRainbowPulse 5s infinite alternate;
-        }
-        @keyframes bgRainbowPulse {
-            0% { opacity: 0.7; filter: hue-rotate(0deg); }
-            100% { opacity: 1; filter: hue-rotate(60deg); }
-        }
-        .cookie-box {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 80%;
-            opacity: 0;
-            animation: fadeInBounceRotate 2s forwards 1s, wiggle 0.5s infinite alternate 3s;
-        }
-        @keyframes fadeInBounceRotate {
-            0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5) rotate(-10deg); }
-            60% { opacity: 1; transform: translate(-50%, -50%) scale(1.2) rotate(10deg); }
-            100% { opacity: 1; transform: translate(-50%, -50%) scale(1) rotate(0deg); }
-        }
-        @keyframes wiggle {
-            0% { transform: translate(-50%, -50%) rotate(-2deg); }
-            100% { transform: translate(-50%, -50%) rotate(2deg); }
-        }
-        .cookie-box img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-        }
-        .title {
-            position: absolute;
-            top: 10%;
-            left: 50%;
-            transform: translateX(-50%);
-            font-family: 'Poppins', sans-serif;
-            font-size: 36px;
-            color: #fff;
-            text-shadow: 2px 2px 4px #000;
-            opacity: 0;
-            animation: slideInPulse 1.5s forwards, colorShift 3s infinite alternate 1.5s;
-        }
-        @keyframes slideInPulse {
-            0% { opacity: 0; transform: translate(-50%, -50px) scale(0.8); }
-            100% { opacity: 1; transform: translate(-50%, 0) scale(1); }
-        }
-        @keyframes colorShift {
-            0% { color: #ffd700; }
-            100% { color: #ff4500; }
-        }
-        .subtitle {
-            position: absolute;
-            bottom: 25%;
-            left: 50%;
-            transform: translateX(-50%);
-            font-family: 'Poppins', sans-serif;
-            font-size: 26px;
-            color: #ffd700;
-            text-shadow: 1px 1px 2px #000;
-            opacity: 0;
-            animation: fadeInBounce 2s forwards 2s;
-        }
-        @keyframes fadeInBounce {
+@keyframes fadeInBounce {
             0% { opacity: 0; transform: translateX(-50%) translateY(20px); }
             60% { opacity: 1; transform: translateX(-50%) translateY(-10px); }
             100% { opacity: 1; transform: translateX(-50%) translateY(0); }
         }
         .call-to-action {
             position: absolute;
-            bottom: 10%;
+            bottom: 5%;
             left: 50%;
             transform: translateX(-50%);
             font-family: 'Poppins', sans-serif;
@@ -111,8 +14,8 @@
             background-color: #ff4500;
             padding: 12px 24px;
             border-radius: 30px;
-opacity: 0;
-            animation: popIn 1s forwards 3s, pulse 1s infinite alternate 4s;
+            opacity: 0;
+            animation: popIn 1s forwards 6s, pulse 1s infinite alternate 7s;
             cursor: pointer;
         }
         @keyframes popIn {
@@ -172,13 +75,16 @@ opacity: 0;
 <body>
     <div class="container">
         <div class="background"></div>
-        <div class="title">Dive into Drip and Bites! 🍪✨</div>
+        <div class="title">Crave Drip and Bites! 🍪😋</div>
         <div class="cookie-box">
             <!-- Replace with your image path when hosting -->
             <img src="image.jpeg" alt="Drip and Bites Cookies">
         </div>
-        <div class="subtitle">Explosively Chewy & Drippin' with Fun! 😋</div>
-        <div class="call-to-action">Grab Yours Now! 🔥🍫</div>
+        <div class="subtitle">Melt-in-Your-Mouth Chocolate Heaven!</div>
+        <div class="eating-gif">
+            <img src="https://media.giphy.com/media/xT0xeMA62E1XIlup68/giphy.gif" alt="Cookie Monster Eating">
+        </div>
+        <div class="call-to-action">Order & Devour Now! 🔥🍫</div>
         <div class="drip-effect">
             <div class="drip"></div>
             <div class="drip"></div>
@@ -188,7 +94,123 @@ opacity: 0;
         </div>
         <div class="sparkle-effect">
             <div class="sparkle"></div>
-            <div class="sparkle"></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drip and Bites TikTok Ad - Appetizing Version</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .container {
+            width: 360px; /* TikTok vertical aspect ratio (9:16) */
+            height: 640px;
+            position: relative;
+            background-color: #f8f1e8; /* Light cookie-themed background */
+            overflow: hidden;
+            border: 1px solid #ccc; /* For visibility, remove if not needed */
+        }
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #d2a679, #8b5a2b, #ff4500, #ffd700);
+            opacity: 0.8;
+            animation: bgRainbowPulse 5s infinite alternate;
+        }
+        @keyframes bgRainbowPulse {
+            0% { opacity: 0.7; filter: hue-rotate(0deg); }
+            100% { opacity: 1; filter: hue-rotate(60deg); }
+        }
+        .cookie-box {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70%;
+            opacity: 0;
+            animation: fadeInBounceRotate 2s forwards 1s, wiggle 0.5s infinite alternate 3s;
+        }
+        @keyframes fadeInBounceRotate {
+            0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5) rotate(-10deg); }
+            60% { opacity: 1; transform: translate(-50%, -50%) scale(1.2) rotate(10deg); }
+            100% { opacity: 1; transform: translate(-50%, -50%) scale(1) rotate(0deg); }
+        }
+        @keyframes wiggle {
+            0% { transform: translate(-50%, -50%) rotate(-2deg); }
+            100% { transform: translate(-50%, -50%) rotate(2deg); }
+        }
+        .cookie-box img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        .eating-gif {
+            position: absolute;
+            bottom: 20%;
+            left: 50%;
+            transform: translate(-50%, 0);
+            width: 80%;
+            opacity: 0;
+            animation: slideUpFadeIn 2s forwards 4s;
+        }
+        @keyframes slideUpFadeIn {
+            0% { opacity: 0; transform: translate(-50%, 50px); }
+            100% { opacity: 1; transform: translate(-50%, 0); }
+        }
+        .eating-gif img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        .title {
+            position: absolute;
+            top: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Poppins', sans-serif;
+            font-size: 32px;
+            color: #fff;
+            text-shadow: 2px 2px 4px #000;
+            opacity: 0;
+            animation: slideInPulse 1.5s forwards, colorShift 3s infinite alternate 1.5s;
+        }
+        @keyframes slideInPulse {
+            0% { opacity: 0; transform: translate(-50%, -50px) scale(0.8); }
+            100% { opacity: 1; transform: translate(-50%, 0) scale(1); }
+        }
+        @keyframes colorShift {
+            0% { color: #ffd700; }
+            100% { color: #ff4500; }
+        }
+        .subtitle {
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Poppins', sans-serif;
+            font-size: 24px;
+            color: #ffd700;
+            text-shadow: 1px 1px 2px #000;
+            opacity: 0;
+            animation: fadeInBounce 2s forwards 2s;
+        }
+<div class="sparkle"></div>
             <div class="sparkle"></div>
             <div class="sparkle"></div>
         </div>
