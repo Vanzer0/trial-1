@@ -1,226 +1,174 @@
-@keyframes fadeInBounce {
-            0% { opacity: 0; transform: translateX(-50%) translateY(20px); }
-            60% { opacity: 1; transform: translateX(-50%) translateY(-10px); }
-            100% { opacity: 1; transform: translateX(-50%) translateY(0); }
-        }
-        .call-to-action {
-            position: absolute;
-            bottom: 5%;
-            left: 50%;
-            transform: translateX(-50%);
-            font-family: 'Poppins', sans-serif;
-            font-size: 22px;
-            color: #fff;
-            background-color: #ff4500;
-            padding: 12px 24px;
-            border-radius: 30px;
-            opacity: 0;
-            animation: popIn 1s forwards 6s, pulse 1s infinite alternate 7s;
-            cursor: pointer;
-        }
-        @keyframes popIn {
-            0% { opacity: 0; transform: translateX(-50%) scale(0); }
-            100% { opacity: 1; transform: translateX(-50%) scale(1); }
-        }
-        @keyframes pulse {
-            0% { transform: translateX(-50%) scale(1); }
-            100% { transform: translateX(-50%) scale(1.05); }
-        }
-        .drip-effect {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-        }
-        .drip {
-            position: absolute;
-            width: 20px;
-            height: 30px;
-            background-color: #8b4513; /* Chocolate drip color */
-            border-radius: 50% 50% 0 0 / 100% 100% 0 0;
-            animation: dripFall 2s infinite linear;
-            opacity: 0.8;
-        }
-        .drip:nth-child(1) { left: 10%; animation-delay: 0s; width: 25px; animation-duration: 2.5s; }
-        .drip:nth-child(2) { left: 30%; animation-delay: 0.3s; width: 15px; animation-duration: 1.8s; }
-        .drip:nth-child(3) { left: 50%; animation-delay: 0.6s; width: 20px; animation-duration: 2.2s; }
-        .drip:nth-child(4) { left: 70%; animation-delay: 0.9s; width: 18px; animation-duration: 2s; }
-        .drip:nth-child(5) { left: 90%; animation-delay: 1.2s; width: 22px; animation-duration: 2.3s; }
-        @keyframes dripFall {
-            0% { top: -30px; opacity: 1; transform: scale(1); }
-            100% { top: 100%; opacity: 0; transform: scale(1.5); }
-        }
-        .sparkle {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background-color: #ffd700;
-            border-radius: 50%;
-            animation: sparkleFloat 4s infinite ease-in-out;
-            opacity: 0.6;
-        }
-        .sparkle:nth-child(1) { top: 20%; left: 15%; animation-delay: 0s; }
-        .sparkle:nth-child(2) { top: 40%; left: 25%; animation-delay: 1s; }
-        .sparkle:nth-child(3) { top: 60%; left: 75%; animation-delay: 0.5s; }
-        .sparkle:nth-child(4) { top: 80%; left: 85%; animation-delay: 1.5s; }
-        @keyframes sparkleFloat {
-            0% { transform: translateY(0) scale(1); opacity: 0.6; }
-            50% { transform: translateY(-20px) scale(1.5); opacity: 1; }
-            100% { transform: translateY(0) scale(1); opacity: 0.6; }
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="background"></div>
-        <div class="title">Crave Drip and Bites! 🍪😋</div>
-        <div class="cookie-box">
-            <!-- Replace with your image path when hosting -->
-            <img src="image.jpeg" alt="Drip and Bites Cookies">
-        </div>
-        <div class="subtitle">Melt-in-Your-Mouth Chocolate Heaven!</div>
-        <div class="eating-gif">
-            <img src="https://media.giphy.com/media/xT0xeMA62E1XIlup68/giphy.gif" alt="Cookie Monster Eating">
-        </div>
-        <div class="call-to-action">Order & Devour Now! 🔥🍫</div>
-        <div class="drip-effect">
-            <div class="drip"></div>
-            <div class="drip"></div>
-            <div class="drip"></div>
-            <div class="drip"></div>
-            <div class="drip"></div>
-        </div>
-        <div class="sparkle-effect">
-            <div class="sparkle"></div>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drip and Bites TikTok Ad - Appetizing Version</title>
+    <title>Product Promo Video Generator</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+        body { font-family: Arial, sans-serif; text-align: center; background-color: #f0f0f0; }
+        #canvas { border: 1px solid #ccc; background-color: #007BFF; }
+        button { padding: 10px 20px; margin: 10px; font-size: 16px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Product Promo Video Generator</h1>
+    <p>This is a simple HTML page that uses Canvas and JavaScript to create an animated promotional "video" simulation. Click "Start Animation" to preview, and "Record Video" to capture and download as WebM (you can convert to MP4 later). Customize the script below with your product details.</p>
+    <canvas id="canvas" width="1280" height="720"></canvas>
+    <br>
+    <button id="startBtn">Start Animation</button>
+    <button id="recordBtn">Record Video</button>
+    <button id="stopRecordBtn" disabled>Stop & Download</button>
 
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
-        }
-        .container {
-            width: 360px; /* TikTok vertical aspect ratio (9:16) */
-            height: 640px;
-            position: relative;
-            background-color: #f8f1e8; /* Light cookie-themed background */
-            overflow: hidden;
-            border: 1px solid #ccc; /* For visibility, remove if not needed */
-        }
-        .background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #d2a679, #8b5a2b, #ff4500, #ffd700);
-            opacity: 0.8;
-            animation: bgRainbowPulse 5s infinite alternate;
-        }
-        @keyframes bgRainbowPulse {
-            0% { opacity: 0.7; filter: hue-rotate(0deg); }
-            100% { opacity: 1; filter: hue-rotate(60deg); }
-        }
-        .cookie-box {
-            position: absolute;
-            top: 30%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 70%;
-            opacity: 0;
-            animation: fadeInBounceRotate 2s forwards 1s, wiggle 0.5s infinite alternate 3s;
-        }
-        @keyframes fadeInBounceRotate {
-            0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5) rotate(-10deg); }
-            60% { opacity: 1; transform: translate(-50%, -50%) scale(1.2) rotate(10deg); }
-            100% { opacity: 1; transform: translate(-50%, -50%) scale(1) rotate(0deg); }
-        }
-        @keyframes wiggle {
-            0% { transform: translate(-50%, -50%) rotate(-2deg); }
-            100% { transform: translate(-50%, -50%) rotate(2deg); }
-        }
-        .cookie-box img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-        }
-        .eating-gif {
-            position: absolute;
-            bottom: 20%;
-            left: 50%;
-            transform: translate(-50%, 0);
-            width: 80%;
-            opacity: 0;
-            animation: slideUpFadeIn 2s forwards 4s;
-        }
-        @keyframes slideUpFadeIn {
-            0% { opacity: 0; transform: translate(-50%, 50px); }
-            100% { opacity: 1; transform: translate(-50%, 0); }
-        }
-        .eating-gif img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-        }
-        .title {
-            position: absolute;
-            top: 5%;
-            left: 50%;
-            transform: translateX(-50%);
-            font-family: 'Poppins', sans-serif;
-            font-size: 32px;
-            color: #fff;
-            text-shadow: 2px 2px 4px #000;
-            opacity: 0;
-            animation: slideInPulse 1.5s forwards, colorShift 3s infinite alternate 1.5s;
-        }
-        @keyframes slideInPulse {
-            0% { opacity: 0; transform: translate(-50%, -50px) scale(0.8); }
-            100% { opacity: 1; transform: translate(-50%, 0) scale(1); }
-        }
-        @keyframes colorShift {
-            0% { color: #ffd700; }
-            100% { color: #ff4500; }
-        }
-        .subtitle {
-            position: absolute;
-            top: 60%;
-            left: 50%;
-            transform: translateX(-50%);
-            font-family: 'Poppins', sans-serif;
-            font-size: 24px;
-            color: #ffd700;
-            text-shadow: 1px 1px 2px #000;
-            opacity: 0;
-            animation: fadeInBounce 2s forwards 2s;
-        }
-<div class="sparkle"></div>
-            <div class="sparkle"></div>
-            <div class="sparkle"></div>
-        </div>
-    </div>
+    <!-- CCapture library for recording canvas to video -->
+    <script src="https://unpkg.com/ccapture.js/build/CCapture.all.min.js"></script>
+
     <script>
-        // Optional JS for more interactivity if needed
-        document.querySelector('.call-to-action').addEventListener('click', () => {
-            alert('Head to dripandbites.com to order!'); // Replace with actual link
+        // Product Customization - Edit here
+        const productName = 'Smart Fitness Tracker';
+        const features = [
+            'Track steps, heart rate, and sleep',
+            'Waterproof and long battery life',
+            'Syncs with your phone app',
+            'Affordable at $49.99'
+        ];
+        const imageUrl = 'https://via.placeholder.com/400x400?text=Product+Image'; // Replace with your product image URL
+        const bgColor = '#007BFF'; // Background color
+        const duration = 30; // Total duration in seconds
+        const fps = 30; // Frames per second
+        const totalFrames = duration * fps;
+
+        // Canvas setup
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        const startBtn = document.getElementById('startBtn');
+        const recordBtn = document.getElementById('recordBtn');
+        const stopRecordBtn = document.getElementById('stopRecordBtn');
+
+        let frame = 0;
+        let animationId;
+        let capturer;
+        let isRecording = false;
+
+        // Preload image
+        const productImg = new Image();
+        productImg.src = imageUrl;
+
+        // Easing function for animations (easeOutQuad)
+        function easeOut(t) {
+            return t * (2 - t);
+        }
+
+        // Draw function for each frame
+        function drawFrame(currentFrame) {
+            const progress = currentFrame / totalFrames;
+            const sec = currentFrame / fps;
+
+            // Clear canvas
+            ctx.fillStyle = bgColor;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Intro: Product name (fades in 0-5s)
+            if (sec < 5) {
+                const alpha = easeOut(sec / 5);
+                ctx.fillStyle = rgba(255, 255, 255, ${alpha});
+                ctx.font = 'bold 80px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText(`Introducing ${productName}`, canvas.width / 2, 200);
+            }
+
+            // Product Image: Zooms in (starts at 2.5s, full at 5s+)
+            if (sec > 2.5) {
+                const imgScale = Math.min(1, easeOut((sec - 2.5) / 2.5));
+                const imgWidth = 400 * imgScale;
+                const imgHeight = 400 * imgScale;
+                ctx.drawImage(productImg, (canvas.width - imgWidth) / 2, (canvas.height - imgHeight) / 2 - 50, imgWidth, imgHeight);
+            }
+
+            // Features: One by one (5s each, starting at 5s)
+            const featureStart = 5;
+            const featureDuration = 5;
+            features.forEach((feature, index) => {
+                const startSec = featureStart + index * featureDuration;
+                const endSec = startSec + featureDuration;
+                if (sec >= startSec && sec < endSec) {
+                    const featureProgress = (sec - startSec) / featureDuration;
+const scale = easeOut(featureProgress);
+                    const alpha = scale;
+                    ctx.fillStyle = rgba(255, 255, 255, ${alpha});
+                    ctx.font = '60px Arial';
+                    ctx.fillText(feature, canvas.width / 2, canvas.height - 150);
+                    ctx.fillStyle = 'rgba(0,0,0,0.5)';
+                    ctx.fillRect((canvas.width / 2) - 300, canvas.height - 200, 600, 100); // Background box
+                    ctx.fillStyle = rgba(255, 255, 255, ${alpha});
+                    ctx.fillText(feature, canvas.width / 2, canvas.height - 130);
+                }
+            });
+
+            // CTA: Last 5s
+            const ctaStart = featureStart + features.length * featureDuration;
+            if (sec >= ctaStart) {
+                const alpha = easeOut((sec - ctaStart) / 5);
+                ctx.fillStyle = rgba(255, 255, 0, ${alpha}); // Yellow
+                ctx.font = 'bold 70px Arial';
+                ctx.fillText('Buy Now and Transform Your Fitness!', canvas.width / 2, canvas.height - 50);
+            }
+        }
+
+        // Animation loop
+        function animate() {
+            drawFrame(frame);
+            frame = (frame + 1) % totalFrames;
+            animationId = requestAnimationFrame(animate);
+        }
+
+        // Recording with CCapture
+        function startRecording() {
+            capturer = new CCapture({
+                format: 'webm',
+                framerate: fps,
+                name: 'promo_video',
+                quality: 100
+            });
+            capturer.start();
+            isRecording = true;
+            frame = 0;
+            stopRecordBtn.disabled = false;
+            recordLoop();
+        }
+
+        function recordLoop() {
+            if (!isRecording || frame >= totalFrames) {
+                stopRecording();
+                return;
+            }
+            drawFrame(frame);
+            capturer.capture(canvas);
+            frame++;
+            setTimeout(recordLoop, 1000 / fps); // Simulate FPS
+        }
+
+        function stopRecording() {
+            isRecording = false;
+            capturer.stop();
+            capturer.save();
+            stopRecordBtn.disabled = true;
+        }
+
+        // Event listeners
+        startBtn.addEventListener('click', () => {
+            if (animationId) cancelAnimationFrame(animationId);
+            frame = 0;
+            animate();
         });
+
+        recordBtn.addEventListener('click', startRecording);
+        stopRecordBtn.addEventListener('click', stopRecording);
+
+        // Initial draw
+        drawFrame(0);
     </script>
+
+    <p>To deploy: Copy this entire HTML code into a file like index.html, push to GitHub repo, and enable GitHub Pages or deploy to Vercel. For real audio, add an <audio> element and sync it. Convert WebM to MP4 using tools like FFmpeg if needed.</p>
 </body>
 </html>
 ```​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
